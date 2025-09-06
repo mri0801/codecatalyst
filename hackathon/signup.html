@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #f6d365, #fda085);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    }
+
+    .signup-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 320px;
+      text-align: center;
+    }
+
+    .signup-container h2 {
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .signup-container input {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .signup-container button {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 1rem;
+      border: none;
+      background: #fda085;
+      color: white;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .signup-container button:hover {
+      background: #f37272;
+    }
+
+    .signup-container p {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .signup-container a {
+      color: #f37272;
+      text-decoration: none;
+    }
+
+    .signup-container a:hover {
+      text-decoration: underline;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-container">
+    <h2>Signup</h2>
+    <form id="signupForm">
+      <input type="text" id="newUsername" placeholder="Choose Username" required>
+      <input type="password" id="newPassword" placeholder="Choose Password" required>
+      <button type="submit">Sign Up</button>
+      <p id="signupMessage" class="error"></p>
+    </form>
+    <p>Already have an account? <a href="login.html">Login</a></p>
+  </div>
+
+  <script>
+    const signupForm = document.getElementById("signupForm");
+    const newUsername = document.getElementById("newUsername");
+    const newPassword = document.getElementById("newPassword");
+    const signupMessage = document.getElementById("signupMessage");
+
+    signupForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      if (newUsername.value.trim() === "" || newPassword.value.trim() === "") {
+        signupMessage.textContent = "Please fill in all fields.";
+        return;
+      }
+
+      if (newPassword.value.length < 6) {
+        signupMessage.textContent = "Password must be at least 6 characters.";
+        return;
+      }
+
+      // Save credentials in localStorage
+      localStorage.setItem("username", newUsername.value);
+      localStorage.setItem("password", newPassword.value);
+
+      signupMessage.style.color = "green";
+      signupMessage.textContent = "Signup successful! Redirecting to login...";
+
+      setTimeout(() => {
+        window.location.href = "/login.html";
+      }, 1500);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Finds - Login</title>
+  <style>
+    
+    body {
+  font-family: Arial, sans-serif;
+  background: url("https://png.pngtree.com/thumb_back/fh260/background/20220218/pngtree-aesthetic-green-background-with-pastel-colors-image_986551.jpg") ;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+
+    .login-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 340px;
+      text-align: center;
+    }
+
+    .app-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1d5a2f;
+  margin-bottom: 1rem;
+  font-family: 'Pacifico', cursive; /* 👈 New font */
+}
+
+    .login-container h2 {
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+
+    .login-container input {
+      width: 100%;
+      padding: 0.8rem;
+      margin: 0.5rem 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .login-container button {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 1rem;
+      border: none;
+      background: #1c7c61;
+      color: white;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-container button:hover {
+      background: #1a5b20;
+    }
+
+    .login-container p {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .login-container a {
+      color: #0d411a;
+      text-decoration: none;
+    }
+
+    .login-container a:hover {
+      text-decoration: underline;
+    }
+
+    .error {
+      color: red;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <div class="app-title">Eco Finds</div>
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Enter Username" required>
+      <input type="password" id="password" placeholder="Enter Password" required>
+      <button type="submit">Login</button>
+      <p id="errorMessage" class="error"></p>
+    </form>
+    <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+  </div>
+
+  <script>
+    const loginForm = document.getElementById("loginForm");
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const errorMessage = document.getElementById("errorMessage");
+
+    loginForm.addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const savedUsername = localStorage.getItem("username");
+      const savedPassword = localStorage.getItem("password");
+
+      if (username.value === savedUsername && password.value === savedPassword) {
+        localStorage.setItem("loggedIn", "true"); 
+        errorMessage.style.color = "green";
+        errorMessage.textContent = "Login successful! Redirecting...";
+        setTimeout(() => {
+          window.location.href = "home.html";
+        }, 1500);
+      } else {
+        errorMessage.style.color = "red";
+        errorMessage.textContent = "Invalid username or password.";
+      }
+    });
+  </script>
+</body>
+</html>

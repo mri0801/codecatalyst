@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Finds - Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dashboard-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 350px;
+    }
+
+    .dashboard-container h2 {
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .dashboard-container p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    .continue-btn {
+      background: #4CAF50;
+      border: none;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .continue-btn:hover {
+      background: #388E3C;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-container">
+    <h2>Welcome, <span id="userDisplay"></span> 🎉</h2>
+    <p>You have successfully logged in.</p>
+    <button class="continue-btn" id="continueBtn">Click to Continue</button>
+  </div>
+
+  <script>
+    const userDisplay = document.getElementById("userDisplay");
+    const continueBtn = document.getElementById("continueBtn");
+
+    const loggedUser = localStorage.getItem("username");
+    const isLoggedIn = localStorage.getItem("loggedIn");
+
+    if (loggedUser && isLoggedIn === "true") {
+      userDisplay.textContent = loggedUser;
+    } else {
+      window.location.href = "login.html"; // redirect if not logged in
+    }
+
+    // Redirect when "Click to Continue" is pressed
+    continueBtn.addEventListener("click", () => {
+      window.location.href = "home.html"; // 👈 Change this to your desired page
+    });
+  </script>
+</body>
+</html>

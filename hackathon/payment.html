@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoFinds - Payment</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #232f3e;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff9900;
+    }
+    nav a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      color: white;
+    }
+    .container {
+      max-width: 500px;
+      margin: 2rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+    label {
+      font-weight: bold;
+      margin: 0.5rem 0 0.2rem;
+      display: block;
+    }
+    input {
+      width: 100%;
+      padding: 0.7rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+    }
+    input:focus {
+      border-color: #ff9900;
+    }
+    .btn {
+      width: 100%;
+      padding: 1rem;
+      background: #ff9900;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #e68a00;
+    }
+    footer {
+      background: #232f3e;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">EcoFinds</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="#">Cart</a>
+      <a href="#">Orders</a>
+      <a href="#">Account</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Payment Details</h2>
+    <form>
+      <label for="name">Cardholder Name</label>
+      <input type="text" id="name" placeholder="Enter name on card" required>
+
+      <label for="card">Card Number</label>
+      <input type="text" id="card" maxlength="16" placeholder="1234 5678 9012 3456" required>
+
+      <label for="expiry">Expiry Date</label>
+      <input type="month" id="expiry" required>
+
+      <label for="cvv">CVV</label>
+      <input type="password" id="cvv" maxlength="3" placeholder="123" required>
+
+      <button type="submit" class="btn">Pay Now</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2025 EcoFinds | Secure Payment</p>
+  </footer>
+
+</body>
+</html>

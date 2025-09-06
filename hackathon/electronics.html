@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoFinds - Electronics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+    }
+
+    header {
+      background-color: #232f3e;
+      color: white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #ff9900;
+    }
+
+    nav a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      color: white;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 1.5rem 0;
+      color: #333;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .category {
+      background: white;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .category:hover {
+      transform: scale(1.05);
+    }
+
+    .category img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      background: #232f3e;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">EcoFinds</div>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="#">Sell</a>
+      <a href="#">Orders</a>
+      <a href="#">Account</a>
+    </nav>
+  </header>
+
+  <!-- Page Title -->
+  <h2>Electronics Categories</h2>
+
+  <!-- Categories Grid -->
+  <section class="categories">
+    <div class="category">
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80" alt="Mobiles">
+      <h3>Mobile Phones</h3>
+    </div>
+    <div class="category">
+      <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80" alt="Laptops">
+      <h3>Laptops</h3>
+    </div>
+    <div class="category">
+      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80" alt="Headphones">
+      <h3>Headphones</h3>
+    </div>
+    <div class="category">
+      <img src="https://cdn.thewirecutter.com/wp-content/media/2024/09/androidsmartwatches-2048px-05488.jpg?auto=webp&quality=75&width=1024" alt="Smart Watches">
+      <h3>Smart Watches</h3>
+    </div>
+    <div class="category">
+      <img src="https://www.adorama.com/alc/wp-content/uploads/2021/04/photography-camera-types-feature.jpg" alt="Cameras">
+      <h3>Cameras</h3>
+    </div>
+    <div class="category">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSte5IZKxlUesTnr62IhUZlNPElOC1XWmX4cw&s" alt="Accessories">
+      <h3>Accessories</h3>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 EcoFinds | Buy & Sell Preloved Electronics</p>
+  </footer>
+
+</body>
+</html>
